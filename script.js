@@ -957,4 +957,55 @@
     dividers.forEach(d => obs.observe(d));
   }
 
+  /* ══════════════════════════════════════════════
+     20. CERTIFICATE MODAL
+     ══════════════════════════════════════════════ */
+  function initCertModal() {
+    const modal = document.getElementById('certModal');
+    const closeBtn = document.getElementById('certModalClose');
+    const iframe = document.getElementById('certIframe');
+    const viewBtns = document.querySelectorAll('.view-cert-btn');
+
+    if (!modal || !closeBtn || !iframe) return;
+
+    viewBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const certUrl = btn.getAttribute('data-cert');
+        if (certUrl) {
+          iframe.src = certUrl;
+          modal.style.display = 'block';
+          document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+      iframe.src = '';
+      document.body.style.overflow = '';
+    });
+
+    // Close on outside click
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+        iframe.src = '';
+        document.body.style.overflow = '';
+      }
+    });
+    
+    // Close on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.style.display === 'block') {
+        modal.style.display = 'none';
+        iframe.src = '';
+        document.body.style.overflow = '';
+      }
+    });
+  }
+  
+  // Initialize modal
+  initCertModal();
+
 })();

@@ -768,3 +768,67 @@ img {
  } 
   
  
+/* ── AWS Domains Grid ── */
+.aws-domains-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.aws-domain-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.aws-domain-card:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.aws-domain-num {
+  font-family: var(--font-mono, 'SF Mono', 'Fira Code', monospace);
+  font-size: 0.7rem;
+  color: var(--accent, #64ffda);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+  opacity: 0.7;
+}
+
+.aws-domain-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary, #e6f1ff);
+  margin: 0 0 0.6rem 0;
+  line-height: 1.4;
+}
+
+.aws-domain-services {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--accent-pink, #f78da7);
+  letter-spacing: 0.02em;
+  margin-bottom: 0.8rem;
+  line-height: 1.5;
+}
+
+.aws-domain-desc {
+  font-size: 0.82rem;
+  color: var(--text-secondary, #8892b0);
+  line-height: 1.65;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .aws-domains-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .aws-domain-card {
+    padding: 1.2rem;
+  }
+}

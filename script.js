@@ -11,7 +11,7 @@
   let targetScrollY = 0;
   let currentScrollY = 0;
   const lerp = (a, b, t) => a + (b - a) * t;
-  fffff
+
   /* ─── Init ─── */
   document.addEventListener('DOMContentLoaded', () => {
     preloader();

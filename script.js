@@ -1,9 +1,9 @@
 /* ======================================================
-   HITESH ARORA — QUANT PORTFOLIO v3
+   DHRUV RAJPUT — AGENTIC AI AND CLOUD & DEVOPS ENGINEER
    Warm Cream Theme — Premium Animations & Interactions
    ====================================================== */
 
-;(function () {
+; (function () {
   'use strict';
 
   /* ─── State ─── */
@@ -11,7 +11,7 @@
   let targetScrollY = 0;
   let currentScrollY = 0;
   const lerp = (a, b, t) => a + (b - a) * t;
-
+  fffff
   /* ─── Init ─── */
   document.addEventListener('DOMContentLoaded', () => {
     preloader();
